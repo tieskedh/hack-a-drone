@@ -1,22 +1,26 @@
-package nl.ordina.jtech.hackadrone.net;
+package nl.ordina.jtech.hackadrone.net
 
-import java.io.IOException;
+import java.io.IOException
 
 /**
  * Interface representing a decoder.
- *
+
  * @author Nils Berlijn
+ * *
  * @version 1.0
+ * *
  * @since 1.0
  */
-public interface Decoder extends Connection {
+interface Decoder : Connection {
 
     /**
      * Reads.
-     *
+
      * @return the read bytes
+     * *
      * @throws IOException if reading failed
      */
-    byte[] read() throws IOException;
+    @Throws(IOException::class)
+    fun read(): ByteArray
 
 }

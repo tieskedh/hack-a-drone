@@ -1,22 +1,24 @@
-package nl.ordina.jtech.hackadrone.io;
+package nl.ordina.jtech.hackadrone.io
 
 /**
  * Interface representing a handler.
- *
+
  * @author Nils Berlijn
+ * *
  * @version 1.0
+ * *
  * @since 1.0
  */
-public interface Handler {
+interface Handler {
 
     /**
      * Starts the handler.
      */
-    void start();
+    fun start()
 
     /**
      * Stops the handler.
      */
-    void stop();
+    fun stop()
 
 }

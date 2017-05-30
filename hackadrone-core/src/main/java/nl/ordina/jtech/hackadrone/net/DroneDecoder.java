@@ -9,7 +9,7 @@ import java.nio.ByteBuffer;
 
 public final class DroneDecoder implements Decoder {
 
-    private static byte[] PH = ByteUtils.asUnsigned(
+    private static byte[] PH = ByteUtils.INSTANCE.asUnsigned(
             0x00, 0x00, 0x00, 0x19, 0xD0,
             0x02, 0x40, 0x02, 0x00, 0xBF,
             0x8A, 0x00, 0x01, 0x5D, 0x03,
@@ -49,7 +49,7 @@ public final class DroneDecoder implements Decoder {
     @Override
     public byte[] read() throws IOException {
         if (!initialized) {
-            byte[] bytes = ByteUtils.loadMessageFromFile("bin/video.bin");
+            byte[] bytes = ByteUtils.INSTANCE.loadMessageFromFile("bin/video.bin");
             outputStream.write(bytes);
 
             byte[] response = new byte[106];
@@ -121,7 +121,7 @@ public final class DroneDecoder implements Decoder {
 
     private byte[] replace(byte[] nalA0) {
         byte[] out = new byte[32];
-        byte[] params = ByteUtils.asUnsigned(0x01, 0x00, 0x00, 0x19, 0xD0, 0x02, 0x40, 0x02);
+        byte[] params = ByteUtils.INSTANCE.asUnsigned(0x01, 0x00, 0x00, 0x19, 0xD0, 0x02, 0x40, 0x02);
 
         System.arraycopy(params, 0, out, 0, params.length);
         System.arraycopy(nalA0, 12, out, 8, 8);
