@@ -2,7 +2,7 @@
 
 - Bijhorende [presentatie] slides
 - Gebaseerd op de [voorbeeldapplicatie] van Otacon
-- Werkend en getest op Windows, Unix en OSX
+- Java-branche Werkend en getest op Windows, Unix en OSX
 
 
 ## Benodigdheden
